@@ -24,6 +24,9 @@ const app = new Elysia()
     logger.error("Error", { requestId });
     throw new Error("Error");
   })
+  .get("/health", () => {
+    return "OK";
+  })
   .post("/", ({headers}) => {
     const requestId = headers["x-amz-cf-id"]
     logger.info("Hi from POST", { requestId });
