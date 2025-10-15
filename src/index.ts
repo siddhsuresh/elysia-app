@@ -16,8 +16,8 @@ const app = new Elysia()
   .use(swagger())
   .get("/", ({headers}) => {
     const requestId = headers["x-amz-cf-id"]
-    logger.info("Hi from GET version  5", { requestId });
-    return "Hello Elysia! Version 5";
+    logger.info("Hi from GET version  6", { requestId });
+    return "Hello Elysia! Version 6";
   })
   .get("/error", ({headers}) => {
     const requestId = headers["x-amz-cf-id"]
@@ -29,8 +29,8 @@ const app = new Elysia()
   })
   .post("/", ({headers}) => {
     const requestId = headers["x-amz-cf-id"]
-    logger.info("Hi from POST version 5", { requestId });
-    return "Hello Elysia! Version 5";
+    logger.info("Hi from POST version 6", { requestId });
+    return "Hello Elysia! Version 6";
   })
   .listen(3000);
 
